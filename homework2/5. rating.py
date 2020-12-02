@@ -16,3 +16,4 @@ while digit != 000:
         elif my_list[elem] > digit and my_list[elem + 1] < digit:
             my_list.insert(elem + 1, digit)
     print(f"Текущий список - {my_list}")
+    digit = int(input("Введите число (или 000 для выхода): "))
