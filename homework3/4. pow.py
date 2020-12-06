@@ -1,10 +1,11 @@
 def pow(x, y):
     if y < 0:
-        i = 1
+        '''i = 1
         while i < abs(y):
-            x = x*x
+            x = (1 / x) * (1 / x) 
             i += 1
-        return 1 / x
+        return x'''
+        return x ** y
     if y > 0:
         return 1 / x ** y
 
