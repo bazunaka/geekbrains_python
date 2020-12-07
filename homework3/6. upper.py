@@ -1,4 +1,4 @@
-words = input("Введите слова через пробел: ").split(" ")
+words = input("Введите слова через пробел: ")
 new_words = []
 
 def int_func(lst):
