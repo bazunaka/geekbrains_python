@@ -1,15 +1,21 @@
 words = input("Введите слова через пробел: ").split(" ")
 new_words = []
 
-def int_func(word):
-    word = word.upper()
+def int_func(lst):
+    #word[0].upper()
 
-    return word
+    up_word = [word[0].upper() + word[1:] for word in lst.split()]
 
-for i in range(0, len(words)):
+    lst = " ".join(up_word)
+    #return word.title()
+
+    return lst
+
+#for i in range(0, len(words)):
     #print(words[i])
-    print(int_func(words[i]))
+    #print(int_func(words[i]))
 
     #new_words = new_words.append(word)
 
+print(int_func(words))
 #print(words)
