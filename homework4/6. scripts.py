@@ -14,5 +14,6 @@ def my_cycle_func(my_list, iteration):
     while i < iteration:
         print(next(iter))
         i+=1
+
 my_count_func(start_number = int(input("enter start number: ")), stop_number = int(input("enter stop number: ")))
 my_cycle_func(my_list = [1, 2, 2, 4, 4, 5, 6, 7, 7, 7, 10], iteration = int(input("enter iteration: ")))
