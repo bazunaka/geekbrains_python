@@ -8,5 +8,5 @@ while True:
         newline = line + "\n"
         my_list.append(newline)
 
-    with open("test.txt", "w") as file_obj:
+    with open("homework5/test.txt", "w") as file_obj:
         file_obj.writelines(my_list)

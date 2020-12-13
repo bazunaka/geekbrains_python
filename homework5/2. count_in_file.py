@@ -1,6 +1,6 @@
 #работаем с файлом, созданным через скрипт 1. create_file.py 
 #из 1 задания
-with open("test.txt") as file_obj:
+with open("homework5/test.txt") as file_obj:
     lines = 0
     letters = 0
     for line in file_obj:
