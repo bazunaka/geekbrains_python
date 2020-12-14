@@ -19,3 +19,6 @@ with open('homework5/file_7.txt', 'r') as file:
         print(f'Средняя прибыль отсутствует!')
 
     print(f'Прибыль каждой компании = {profit_dict}')
+
+with open('homework5/file_7.json', 'w') as write_js:
+    json.dump(profit_dict, write_js)
