@@ -27,3 +27,9 @@ class Jacket(Textil):
 
     def __str__(self):
         return f'Площадь на костюм {self.square_jacket}'
+
+coat = Coat(2, 4)
+jacket = Jacket(1, 2)
+
+print(coat)
+print(jacket)

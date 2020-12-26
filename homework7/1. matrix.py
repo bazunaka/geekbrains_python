@@ -6,6 +6,9 @@ class Matrix:
     def __add__(self):
         matr = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
 
-        
+        for i in range(len(self.list1)):
+            for j in range(len(self.list2[i])):
+                matr[i][j] = self.list1[i][j] + self.list2[i][j]
 
     def __str__(self):
+        return str()
