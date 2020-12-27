@@ -13,7 +13,7 @@ class Matrix:
             for j in range(len(self.list_2[i])):
                 matr[i][j] = self.list_1[i][j] + self.list_2[i][j]
 
-        return matr
+        return str(matr) #__str__ не срабатывает. не понял как выводить
 
 
     def __str__(self):
