@@ -22,5 +22,5 @@ class Data:
         return f'Текущая дата {Data.extract(self.day_month_year)}'
 
 today = Data('28 - 12 - 2020')
-#print(Data.extract('28 - 12 - 2020'))
-#print(today.extract('28 - 12 - 2020'))
+print(Data.extract('28 - 12 - 2020'))
+print(today.extract('28 - 12 - 2020'))
