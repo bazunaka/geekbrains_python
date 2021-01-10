@@ -15,4 +15,4 @@ print(DivisionByZero.divide_by_zero(10, 0))
 print(DivisionByZero.divide_by_zero(10, 2))
 
 print(div.divide_by_zero(100, 0))
-print(div.divide_by_zero(100, 10))
+print(div.divide_by_zero(100, 10)) 

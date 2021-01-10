@@ -17,4 +17,4 @@ class Error:
                     return 'Вы вышли!'
 
 er = Error(1)
-print(er.my_input())
+print(er.my_input()) 

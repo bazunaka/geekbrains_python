@@ -23,4 +23,4 @@ class Data:
 
 today = Data('28 - 12 - 2020')
 print(Data.extract('28 - 12 - 2020'))
-print(today.extract('28 - 12 - 2020'))
+print(today.extract('28 - 12 - 2020')) 
