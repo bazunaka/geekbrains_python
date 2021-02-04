@@ -1,0 +1,10 @@
+Автоматически mysql не прописался в /eth/paths, терминал выдавал: command mysql not found. 
+Выполнил:
+
+sudo nano /etc/paths
+
+Добавил в конец файла: 
+
+/usr/local/mysql/bin
+
+И перезапустил терминал. 
