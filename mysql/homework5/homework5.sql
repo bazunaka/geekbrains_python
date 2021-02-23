@@ -29,4 +29,10 @@ select avg(FLOOR((TO_DAYS(NOW()) - TO_DAYS(birthday_at))/365.25)) as avg_age fro
 SELECT  avg(TIMESTAMPDIFF(YEAR, birthday_at, NOW())) AS avg_age FROM users;
 
 #2
-SELECT DAYNAME(birthday_at) FROM users ORDER BY birthday_at;
+select name, birthday_at, dayname(birthday_at) as old_dayname, DATE_FORMAT(birthday_at,'2021-%m-%d') as now_year, dayname(DATE_FORMAT(birthday_at,'2021-%m-%d'))  as dayname
+    from users;
+select dayname(DATE_FORMAT(birthday_at,'2021-%m-%d'))  as dayname, COUNT(dayname(DATE_FORMAT(birthday_at,'2021-%m-%d'))) as qwe from users group by dayname;
+
+#3
+select round(exp(sum(ln(value)))) as factorial from integers;
+select round(exp(sum(log(value)))) as factorial from integers;
