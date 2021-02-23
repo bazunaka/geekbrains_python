@@ -10,4 +10,8 @@ show fields from users;
 
 #3
 select value from storehouses_products order by
-    if (value > 0, 0, 1), value ;
+    if (value > 0, 0, 1), value;
+
+#4
+SELECT name, DATE_FORMAT(birthday_at, '%M') AS birthday_at FROM users
+    where DATE_FORMAT(birthday_at, '%M') = 'May' OR DATE_FORMAT(birthday_at, '%M') = 'August';
