@@ -266,3 +266,18 @@ alter table communities_users
 	add constraint communities_users_user_id_fk
 		foreign key (user_id) references users (id)
 			on delete cascade;
+
+alter table friendship
+	add constraint friendship_fr_statuses_id_fk
+		foreign key (friendship_status_id) references friendship_statuses (id)
+			on delete cascade;
+
+alter table friendship
+	add constraint friendship_friend_id_fk
+		foreign key (friend_id) references users (id)
+			on delete cascade;
+
+alter table friendship
+	add constraint friendship_user_id_fk
+		foreign key (user_id) references users (id)
+			on delete cascade;
