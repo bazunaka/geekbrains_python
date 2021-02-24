@@ -301,3 +301,9 @@ alter table posts
 	add constraint posts_user_id_fk
 		foreign key (user_id) references users (id)
 			on delete cascade;
+select profiles.gender, count(likes.user_id) as count
+    from likes, profiles
+    where likes.user_id = profiles.user_id
+    group by profiles.gender;
+#select count(likes.user_id) from likes, profiles where likes.user_id = profiles.user_id AND profiles.gender = 'M';
+#select count(likes.user_id) from likes, profiles where likes.user_id = profiles.user_id AND profiles.gender = 'F';
