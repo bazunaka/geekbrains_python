@@ -251,3 +251,18 @@ alter table messages add constraint messages_from_user_id_fk
     foreign key (from_user_id) references users(id) on delete cascade,
 add constraint messages_to_user_if_fk
     foreign key (to_user_id) references users(id) on delete cascade;
+
+alter table communities
+	add constraint communities_owner_id_fk
+		foreign key (owner_id) references users (id)
+			on delete cascade;
+
+alter table communities_users
+	add constraint communities_users_comm_id_fk
+		foreign key (community_id) references communities (id)
+			on delete cascade;
+
+alter table communities_users
+	add constraint communities_users_user_id_fk
+		foreign key (user_id) references users (id)
+			on delete cascade;
