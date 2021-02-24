@@ -301,6 +301,17 @@ alter table posts
 	add constraint posts_user_id_fk
 		foreign key (user_id) references users (id)
 			on delete cascade;
+
+alter table likes
+	add constraint likes_target_type_id_fk
+		foreign key (target_type_id) references target_types (id)
+			on delete cascade;
+
+alter table likes
+	add constraint likes_user_id_fk
+		foreign key (user_id) references users (id)
+			on delete cascade;
+
 select case (profiles.gender)
     WHEN 'M' THEN 'Man'
     WHEN 'F' THEN 'Woman'
@@ -308,5 +319,14 @@ select case (profiles.gender)
     from likes, profiles
     where likes.user_id = profiles.user_id
     group by profiles.gender;
-#select count(likes.user_id) from likes, profiles where likes.user_id = profiles.user_id AND profiles.gender = 'M';
-#select count(likes.user_id) from likes, profiles where likes.user_id = profiles.user_id AND profiles.gender = 'F';
+
+SELECT  profiles.user_id, TIMESTAMPDIFF(YEAR, birthday, NOW()) AS age FROM profiles, likes
+    where profiles.user_id = likes.user_id
+    order by age asc LIMIT 10;
+
+select likes.user_id, TIMESTAMPDIFF(YEAR, birthday, NOW()) AS age, count(likes.user_id)
+    from likes, profiles where likes.user_id = profiles.user_id group by likes.user_id order by age asc limit 10;
+
+select likes.user_id from likes, profiles where likes.user_id = profiles.user_id
+union
+select TIMESTAMPDIFF(YEAR, birthday, NOW()) AS age from profiles order by age asc limit 10;
