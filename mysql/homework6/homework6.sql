@@ -320,13 +320,9 @@ select case (profiles.gender)
     where likes.user_id = profiles.user_id
     group by profiles.gender;
 
-SELECT  profiles.user_id, TIMESTAMPDIFF(YEAR, birthday, NOW()) AS age FROM profiles, likes
+#not sum
+SELECT likes.user_id, count(likes.user_id) FROM profiles, likes
     where profiles.user_id = likes.user_id
-    order by age asc LIMIT 10;
+    group by profiles.user_id order by TIMESTAMPDIFF(YEAR, profiles.birthday, NOW()) asc limit 10;
 
-select likes.user_id, TIMESTAMPDIFF(YEAR, birthday, NOW()) AS age, count(likes.user_id)
-    from likes, profiles where likes.user_id = profiles.user_id group by likes.user_id order by age asc limit 10;
-
-select likes.user_id from likes, profiles where likes.user_id = profiles.user_id
-union
-select TIMESTAMPDIFF(YEAR, birthday, NOW()) AS age from profiles order by age asc limit 10;
+select profiles.user_id from profiles, communities_users where profiles.user_id != communities_users.user_id;
