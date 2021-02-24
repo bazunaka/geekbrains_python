@@ -244,3 +244,10 @@ insert into posts (id, user_id, community_id, head, body, media_id, is_public, i
 insert into posts (id, user_id, community_id, head, body, media_id, is_public, is_archived, created_at, updated_at) values (199, 78, 2, 'reintermediate vertical partnerships', 'vitae mattis nibh ligula nec sem duis aliquam convallis nunc proin at turpis a pede posuere nonummy integer non velit donec', 39, false, false, '2019-12-08', '2019-10-22');
 insert into posts (id, user_id, community_id, head, body, media_id, is_public, is_archived, created_at, updated_at) values (200, 42, 4, 'target viral e-commerce', 'a odio in hac habitasse platea dictumst maecenas ut massa quis augue luctus tincidunt nulla mollis molestie lorem quisque ut erat curabitur gravida nisi at nibh in hac habitasse platea dictumst aliquam augue quam sollicitudin vitae consectetuer eget rutrum at lorem integer tincidunt ante vel ipsum praesent blandit lacinia erat vestibulum sed magna at nunc commodo placerat praesent blandit nam nulla integer pede justo lacinia eget tincidunt eget tempus vel pede morbi porttitor lorem id ligula suspendisse ornare', 61, true, true, '2018-06-23', '2019-10-05');
 
+alter table profiles add constraint profiles_user_id_fk
+    foreign key (user_id) references users(id) on delete cascade ;
+
+alter table messages add constraint messages_from_user_id_fk
+    foreign key (from_user_id) references users(id) on delete cascade,
+add constraint messages_to_user_if_fk
+    foreign key (to_user_id) references users(id) on delete cascade;
