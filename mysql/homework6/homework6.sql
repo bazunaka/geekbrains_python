@@ -321,8 +321,9 @@ select case (profiles.gender)
     group by profiles.gender;
 
 #not sum
-SELECT likes.user_id, count(likes.user_id) FROM profiles, likes
+select sum(qwe.c) from
+(SELECT likes.user_id, count(likes.user_id) as c FROM profiles, likes
     where profiles.user_id = likes.user_id
-    group by profiles.user_id order by TIMESTAMPDIFF(YEAR, profiles.birthday, NOW()) asc limit 10;
+    group by profiles.user_id order by TIMESTAMPDIFF(YEAR, profiles.birthday, NOW()) asc limit 10) as qwe;
 
 select profiles.user_id from profiles, communities_users where profiles.user_id != communities_users.user_id;
