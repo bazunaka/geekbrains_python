@@ -320,10 +320,13 @@ select case (profiles.gender)
     where likes.user_id = profiles.user_id
     group by profiles.gender;
 
-#not sum
 select sum(qwe.c) from
 (SELECT likes.user_id, count(likes.user_id) as c FROM profiles, likes
     where profiles.user_id = likes.user_id
     group by profiles.user_id order by TIMESTAMPDIFF(YEAR, profiles.birthday, NOW()) asc limit 10) as qwe;
 
-select profiles.user_id from profiles, communities_users where profiles.user_id != communities_users.user_id;
+select profiles.user_id from profiles where profiles.user_id not in (select communities.owner_id from communities)
+AND
+profiles.user_id not in (select likes.user_id from likes)
+AND
+profiles.user_id not in (select messages.from_user_id from messages);
