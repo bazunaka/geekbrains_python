@@ -329,4 +329,4 @@ select profiles.user_id from profiles where profiles.user_id not in (select comm
 AND
 profiles.user_id not in (select likes.user_id from likes)
 AND
-profiles.user_id not in (select messages.from_user_id from messages);
+profiles.user_id not in (select messages.from_user_id from messages) limit 10;
