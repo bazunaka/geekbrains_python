@@ -35,3 +35,15 @@ RIGHT JOIN
 	orders AS o
 ON
 	u.id = o.user_id; #user_id 1 и 6 не сделали ни одного заказа
+
+#2
+SELECT
+	p.id, p.name, p.price,
+	c.id AS cat_id,
+	c.name AS catalog
+FROM
+	products AS p
+JOIN
+	catalogs AS c
+ON
+	p.catalog_id = c.id;
