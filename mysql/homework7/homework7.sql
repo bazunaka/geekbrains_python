@@ -47,3 +47,38 @@ JOIN
 	catalogs AS c
 ON
 	p.catalog_id = c.id;
+
+#3
+CREATE TABLE IF NOT EXISTS flights(
+id SERIAL PRIMARY KEY,
+otkuda VARCHAR(50) NOT NULL COMMENT 'en',
+kuda VARCHAR(50) NOT NULL COMMENT 'en'
+);
+
+CREATE TABLE  IF NOT EXISTS cities(
+label VARCHAR(50) PRIMARY KEY COMMENT 'en',
+name VARCHAR(50) COMMENT 'ru'
+);
+
+INSERT INTO cities VALUES
+('Moscow', 'Москва'),
+('Saint Petersburg', 'Санкт-Петербург'),
+('Omsk', 'Омск'),
+('Tomsk', 'Томск'),
+('Ufa', 'Уфа');
+
+INSERT INTO flights VALUES
+(NULL, 'Moscow', 'Saint Petersburg'),
+(NULL, 'Saint Petersburg', 'Omsk'),
+(NULL, 'Omsk', 'Tomsk'),
+(NULL, 'Tomsk', 'Ufa'),
+(NULL, 'Ufa', 'Moscow');
+
+SELECT
+	id AS flight_id,
+	(SELECT name FROM cities WHERE label = otkuda) AS `from`,
+	(SELECT name FROM cities WHERE label = kuda) AS `to`
+FROM
+	flights
+ORDER BY
+	flight_id;
