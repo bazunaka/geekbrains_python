@@ -320,13 +320,27 @@ select case (profiles.gender)
     where likes.user_id = profiles.user_id
     group by profiles.gender;
 
-select sum(qwe.c) from
-(SELECT likes.target_id, count(likes.target_id) as c FROM profiles, likes
-    where profiles.user_id = likes.target_id
-    group by profiles.user_id order by profiles.birthday desc limit 10) as qwe;
+#не правильно понял что такое target_id, из-за этого заполнил данный столбец неверно.
+#видимо в лекции упустил момент..из-за этого очень долго разбирался с этим заданием и решение такое получилось.
+#все исправил, спасибо!)
+#select sum(qwe.c) from
+#(SELECT likes.target_id, count(likes.target_id) as c FROM profiles, likes
+#    where profiles.user_id = likes.target_id
+#    group by profiles.user_id order by profiles.birthday desc limit 10) as qwe;
+
+#исправленное задание
+update likes set target_type_id = FLOOR(1 + (RAND() * 4));
+
+select sum(total_likes) from
+    (select
+        (select count(*) from likes where target_id = profiles.user_id and
+                                      target_type_id = 2) as total_likes
+        from profiles order by birthday desc limit 10) as user_likes;
+
 
 select profiles.user_id from profiles where profiles.user_id not in (select communities.owner_id from communities)
 AND
 profiles.user_id not in (select likes.user_id from likes)
 AND
 profiles.user_id not in (select messages.from_user_id from messages) limit 10;
+
