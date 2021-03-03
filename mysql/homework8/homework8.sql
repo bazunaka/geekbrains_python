@@ -1,21 +1,24 @@
 #3
-select case (profiles.gender)
+select case (p.gender)
     WHEN 'M' THEN 'Man'
     WHEN 'F' THEN 'Woman'
-    END AS gender, count(likes.user_id) as count
-    from likes
-    left join profiles on likes.user_id = profiles.user_id #можно использовать простой join
-    group by profiles.gender;
+    END AS gender, count(l.user_id) as count
+    from likes l
+    left join profiles p on l.user_id = p.user_id #можно использовать простой join
+    group by p.gender;
 
 #4
-select sum(total_likes) from
-    (select
-        (select count(*) from likes,profiles where target_id = profiles.user_id and
-                                      target_type_id = 2) as total_likes
-        from profiles order by birthday desc limit 10) as user_likes;
-
-select count(*) from likes join profiles on target_id = profiles.user_id and
-                                      target_type_id = 2;
+SELECT
+	count( * ) AS cnt
+FROM
+	(
+SELECT
+	l.target_id
+FROM
+	likes AS l
+	JOIN ( SELECT p.user_id FROM `profiles` AS p ORDER BY birthday DESC LIMIT 10 ) AS tl ON l.target_id = tl.user_id
+	AND l.target_type_id = 2
+	) AS ul;
 
 #5
 select profiles.user_id from profiles where profiles.user_id not in (select communities.owner_id from communities)
