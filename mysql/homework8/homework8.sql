@@ -20,10 +20,36 @@ FROM
 	AND l.target_type_id = 2
 	) AS ul;
 
-#5
-select profiles.user_id from profiles where profiles.user_id not in (select communities.owner_id from communities)
-AND
-profiles.user_id not in (select likes.user_id from likes)
-AND
-profiles.user_id not in (select messages.from_user_id from messages) limit 10;
-
+#5 получились костыли какие-то! не ищем легких путей
+select
+`profiles`.user_id
+from
+`profiles`
+where `profiles`.user_id not in
+(select
+c.owner_id
+from
+`profiles` p
+right join communities c
+on p.user_id = c.owner_id
+where c.owner_id is not null)
+and
+`profiles`.user_id not in
+(select
+l.user_id
+from
+`profiles` p
+right join likes l
+on p.user_id = l.user_id
+where l.user_id is not null)
+and
+`profiles`.user_id not in
+(select
+m.from_user_id
+from
+`profiles` p
+right join messages m
+on p.user_id = m.from_user_id
+where m.from_user_id is not null)
+limit 10
+;
