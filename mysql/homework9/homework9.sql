@@ -27,14 +27,16 @@ INSERT INTO datetbl VALUES
 	('2018-08-29'),
 	('2018-08-31');
 
-SELECT created_at AS below_5 FROM datetbl
+DELETE FROM datetbl
 WHERE created_at NOT IN (
 	SELECT *
 	FROM (
 		SELECT *
 		FROM datetbl
 		ORDER BY created_at DESC
-		LIMIT 5) AS foo) ORDER BY created_at DESC;
+		LIMIT 5
+	) AS foo
+) ORDER BY created_at DESC;
 
 #2-1
 GRANT SELECT ON shop.* TO 'shop_reader'@'localhost';
@@ -60,3 +62,13 @@ END //
 delimiter ;
 
 CALL hello();
+
+#3-2
+delimiter //
+CREATE TRIGGER nullTrigger BEFORE INSERT ON products
+FOR EACH ROW
+BEGIN
+	IF(ISNULL(NEW.name) AND ISNULL(NEW.description)) THEN
+		SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Trigger Warning! NULL in both fields!'; #unhandled user-defined exception
+	END IF;
+END //
