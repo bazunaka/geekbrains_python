@@ -17,7 +17,7 @@ select distinct communities.name,
                 max(p.birthday) over (partition by community_id) as max_birthday,
                 min(p.birthday) over (partition by community_id) as min_birthday,
                 count(communities_users.user_id) over (partition by community_id) as cnt_in_group,
-                count(p.user_id) over() as total_in_system,
+                (select count(*) from profiles) as total_in_system,
                 count(communities_users.user_id) over (partition by community_id) / count(p.user_id) over() * 100 as percent_in_group
 from communities_users
 join communities
