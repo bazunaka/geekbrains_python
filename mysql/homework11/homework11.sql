@@ -51,3 +51,15 @@ create procedure insert_into_test_users ()
             end while ;
     end //
 delimiter ;
+
+#команды терминала не выносил в отдельный файл
+#2-1
+
+#2-2
+/* 1 - ключ, 2 - значение
+set ivan@mail.ru ivan
+set ivan ivan@mail.ru
+
+   get ivan@mail.ru
+   get ivan
+ */
