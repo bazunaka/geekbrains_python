@@ -32,3 +32,22 @@ create trigger log_users after insert on products
 delimiter ;
 
 #1-2
+
+create table test_users (
+    id serial primary key ,
+    name varchar(100) ,
+    created_at datetime default current_timestamp
+);
+
+delimiter //
+create procedure insert_into_test_users ()
+    begin
+        declare i int default 1000001;
+        declare j int default 0;
+        while i > 0 do
+            insert into test_users(name) values (concat('user_', j));
+            set j = j + 1;
+            set i = i - 1;
+            end while ;
+    end //
+delimiter ;
