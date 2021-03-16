@@ -63,3 +63,7 @@ set ivan ivan@mail.ru
    get ivan@mail.ru
    get ivan
  */
+
+#2-3
+db.products.insertMany([{"name": "AMD", "description": "proc", "price": "5000", "catalog_id": "Процессоры", "created_at": new Date(), "updated_at": new Date()},
+                        {"name": "Intel", "description": "proc", "price": "7000", "catalog_id": "Процессоры", "created_at": new Date(), "updated_at": new Date()}])
