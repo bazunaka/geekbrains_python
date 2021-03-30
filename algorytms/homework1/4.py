@@ -15,10 +15,17 @@ def auth_1(users, username, password):
                 return "Неверный пароль!"
         else:
             return "Пользователя не существует("
+#Постоянная
+def auth_2(users, username, password):
+    if users.get(username):
+        if users[username]['password'] == password and users[username]['active']:
+            return "Доступ к ресурсу есть!"
+        elif users[username]['password'] == password and not users[username]['active']:
+            return "Нужно активировать запись!"
+        elif users[username]['password'] != password:
+            return "Неверный пароль!"
+    else:
+            return "Пользователя не существует("        
 
-def auth_2(users, username):
-    for key in users.keys():
-        print (key, '->', users[key])
-
-#print(auth_1(users, 'user123', 'asd'))
-auth_2(users, 'user2')
+print(auth_1(users, 'user123', 'asd'))
+print(auth_2(users, 'user2', '12345'))
