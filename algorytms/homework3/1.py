@@ -18,8 +18,8 @@ def check_list_index(list_obj):
             print(list_obj[i])
 
 a = create_list(1000)
-#print(create_list(1000))
-#print(create_dict(1000))
+print(create_list(1000))
+print(create_dict(1000))
 
 check_list_index(a)
 

@@ -16,4 +16,4 @@ def auth(password):
     else:
         print("Пароли не совпадают(")
 
-auth(password)
+auth(password) 
