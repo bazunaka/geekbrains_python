@@ -22,8 +22,8 @@ def f2(dict_obj):
     result.sort(key = lambda i: i[1], reverse = True)
 
 def f3(dict_obj):
-    m = max(dict_obj.values())
-    return list(filter(lambda t: t[1]==m, dict_obj.items()))[0][1]
+    m = max(dict_obj.values()) #O(n)
+    return list(filter(lambda t: t[1]==m, dict_obj.items()))[0][1] 
 
 print(f1(company_profit))
 print(f3(company_profit))  
