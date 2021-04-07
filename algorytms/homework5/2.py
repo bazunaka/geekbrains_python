@@ -19,11 +19,13 @@ def my_dex(string):
 
 def my_hex(numb):
     num = collections.deque()
-    dec = numb % 16
-    #цикл
-    for i in table:
-        if table[i] == dec:
-            num.append(i)
+    
+    while numb > 0:
+        dec = numb % 16
+        for i in table:
+            if table[i] == dec:
+                num.append(i)
+        numb //= 16
     num.reverse()
     return list(num)
 
