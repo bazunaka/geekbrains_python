@@ -24,7 +24,8 @@ def check_3(lst_obj):
     lst_copy = list(lst_obj)                 # !!! линейная
     lst_copy.sort()                          # !!! логарифмическая
     for i in range(len(lst_obj) - 1):        # !!! линейная
-        if lst_copy[i] == lst_copy[i+1]:     # !!! линейная
+        if lst_copy[i] == lst_copy[i+1]:     # !!! линейная Сравнение списков (==, !=)	l1 == l2	O(N)
+                                             # в вашем решении почему то O(1) ???   
             return False                     # !!! постоянная
     return True                              # !!! постоянная
 
