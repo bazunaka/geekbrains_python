@@ -7,3 +7,14 @@ p {
     line-height: 26px;
     color: #1F3F68;
 }
+
+h1 {
+    font-size: 64px;
+    color: #1F3F68;
+}
+
+.contacts {
+    font-weight: 500;
+    font-size: 44px;
+    text-align: center;
+}
