@@ -17,7 +17,6 @@
 	font-weight: 500;
 	font-size: 44px;
 	text-align: center;
-	;
 }
 
 .header3 {
@@ -58,6 +57,89 @@
 	padding: 10px;
 }
 
+.title_site {
+	margin-left: 80px;
+}
+
 #acc {
-	text-align: right;
+	float: right;
+}
+
+.medium_site {
+	overflow: hidden;
+	width: 100%;
+	margin-left: 80px;
+}
+
+.information {
+	white-space: nowrap;
+}
+
+.information div {
+	display: inline-block;
+	width: 33%;
+	box-shadow: 5px 20px 50px rgba(16, 112, 177, 0.2);
+	border-radius: 10px;
+}
+
+span {
+	display: block;
+	padding: 10px;
+	font-size: 28px;
+	text-align: center;
+	margin-left: 80px;
+}
+
+.footer {
+	overflow: hidden;
+	width: 100%;
+	margin-left: 80px;
+}
+
+.up_footer {
+	height: 100px;
+	width: 50%;
+	text-align: left;
+	box-shadow: 5px 20px 50px rgba(16, 112, 177, 0.2);
+	border-radius: 10px;
+}
+
+.phones {
+	white-space: nowrap;
+}
+
+.phones li {
+	display: inline-block;
+	width: 33%;
+	box-shadow: 5px 20px 50px rgba(16, 112, 177, 0.2);
+	border-radius: 10px;
+}
+
+.picture {
+	white-space: nowrap;
+}
+
+.picture img {
+	width: 40%;
+}
+
+.contacts {
+	white-space: nowrap;
+}
+
+.contacts div {
+	display: inline-block;
+	width: 50%;
+	box-shadow: 5px 20px 50px rgba(16, 112, 177, 0.2);
+	border-radius: 10px;
+}
+
+.form {
+	white-space: nowrap;
+}
+
+.form div {
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
 }
