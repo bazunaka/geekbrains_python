@@ -143,3 +143,8 @@ span {
 	flex-direction: column;
 	overflow: hidden;
 }
+
+.map {
+	width: 100%;
+	margin: 50px;
+}
