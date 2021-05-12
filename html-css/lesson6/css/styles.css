@@ -1,0 +1,158 @@
+* {
+	position: relative;
+	width: 1366px;
+	height: 3373px;
+	background: #FFFFFF;
+	font-family: sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	width: 1140px;
+	margin: 0 auto;
+}
+
+.header_site {
+	display: flex;
+	justify-content: space-between;
+	font-size: 24px;
+	background: #5A98D0;
+	border-radius: 10px;
+	padding: 5px;
+}
+
+.paragraph {
+	font-size: 16px;
+	line-height: 26px;
+	color: #1F3F68;
+	width: 425px;
+}
+
+.header1 {
+	font-size: 64px;
+	color: #1F3F68;
+	width: 510px;
+}
+
+.h2_contacts {
+	font-weight: 500;
+	font-size: 44px;
+	text-align: center;
+}
+
+.header3 {
+	font-size: 36px;
+	text-align: center;
+}
+
+.medium_site div {
+	display: flex;
+}
+
+.header4 {
+	font-size: 20px;
+	line-height: 30px;
+	color: #1F3F68;
+	width: 359px;
+}
+
+.paragraph4 {
+	width: 359px;
+}
+
+.my_input {
+	border: 1px solid #356EAD;
+	box-sizing: border-box;
+	border-radius: 10px;
+	opacity: 0.4;
+}
+
+.my_button {
+	background: #5A98D0;
+	box-shadow: 5px 20px 50px rgba(16, 112, 177, 0.2);
+	border-radius: 10px;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 26px;
+	text-align: center;
+	color: #FFFFFF;
+	text-transform: uppercase;
+}
+
+.information {
+	display: flex;
+	justify-content: space-around;
+}
+
+.information div {
+	display: inline;
+	font-display: nowrap;
+	box-shadow: 5px 20px 50px rgba(16, 112, 177, 0.2);
+	border-radius: 10px;
+	width: 33%;
+}
+
+span {
+	display: block;
+	padding: 10px;
+	font-size: 28px;
+	text-align: center;
+	margin-left: 80px;
+}
+
+.up_footer h3 {
+	width: 495px;
+}
+
+.up_footer p {
+	width: 340px;
+}
+
+.phones li {
+	display: flex;
+	justify-content: space-around;
+	white-space: nowrap;
+}
+
+.phones li {
+	display: inline-block;
+	width: 33%;
+	box-shadow: 5px 20px 50px rgba(16, 112, 177, 0.2);
+	border-radius: 10px;
+}
+
+.picture {
+	white-space: nowrap;
+}
+
+.picture img {
+	width: 40%;
+}
+
+.contacts {
+	white-space: nowrap;
+}
+
+.contacts div {
+	display: inline-block;
+	width: 50%;
+	box-shadow: 5px 20px 50px rgba(16, 112, 177, 0.2);
+	border-radius: 10px;
+}
+
+.form {
+	white-space: nowrap;
+}
+
+.form div {
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+}
+
+.map {
+	display: flex;
+	justify-content: center;
+	width: 100vw;
+}
