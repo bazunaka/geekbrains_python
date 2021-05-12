@@ -13,6 +13,14 @@
 	margin: 0 auto;
 }
 
+.header {
+	position: absolute;
+	width: 1140px;
+	height: 48px;
+	left: 113px;
+	top: 34px;
+}
+
 .header_site {
 	display: flex;
 	justify-content: space-between;
