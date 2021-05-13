@@ -1,0 +1,72 @@
+.wrapper {
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0 auto;
+}
+
+.container {
+    position: relative;
+    max-width: 1366px;
+    background: #FFFFFF;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.hero {
+    background: linear-gradient(0deg, #EBF3FB 8.84%, rgba(152, 195, 232, 0) 31.12%);
+}
+
+.header1 {
+
+    font-style: normal;
+    font-weight: 300;
+    font-size: 64px;
+    line-height: 74px;
+    letter-spacing: 0.04em;
+
+    color: #1F3F68;
+}
+
+.paragraph1 {
+
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 26px;
+    letter-spacing: 0.05em;
+
+    color: #1F3F68;
+
+    opacity: 0.6;
+}
+
+.header {}
+
+.navigation {}
+
+.address {}
+
+.what_we_do {
+    position: absolute;
+    width: 1140px;
+    height: 585.13px;
+    left: 113px;
+    top: 832px;
+}
+
+.our_project {
+    position: absolute;
+    width: 1140px;
+    height: 1123px;
+    left: 113px;
+    top: 1481px;
+}
+
+.footer {
+    position: absolute;
+    width: 1366px;
+    height: 657px;
+    left: 0;
+    top: 2716px;
+}
