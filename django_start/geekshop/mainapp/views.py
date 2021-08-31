@@ -9,5 +9,5 @@ def products(request):
     return render(request, 'mainapp/products.html')
 
 
-def contact(request):
+def contacts(request):
     return render(request, 'mainapp/contacts.html')
