@@ -7,7 +7,8 @@ def main(request):
 
 
 def products(request):
-    return render(request, 'mainapp/products.html')
+    catalog = ["Новинки", "Одежда", "Обувь", "Аксессуары", "Подарки"]
+    return render(request, 'mainapp/products.html', context={"catalog": catalog})
 
 
 def contacts(request):
