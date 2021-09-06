@@ -2,7 +2,8 @@ from django.shortcuts import render
 
 
 def main(request):
-    return render(request, 'mainapp/index.html')
+    data = {"title_name": "Магазин GeekShop", "name_shop": "Geekshop"}
+    return render(request, 'mainapp/index.html', context=data)
 
 
 def products(request):
